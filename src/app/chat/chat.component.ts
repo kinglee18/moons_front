@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { take } from 'rxjs/operators';
 
@@ -8,7 +8,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-
+  @ViewChild('scrollWin') private scrollwin: ElementRef;
   username: string;
   model: any = {};
   historyMessages = [];
@@ -25,6 +25,7 @@ export class ChatComponent implements OnInit {
     this.chatService.sendMessage(this.model.message);
     this.historyMessages.push({ username: this.username, text: this.model.message });
     this.model.message = '';
+    this.scrollwin.nativeElement.scrollTop = this.scrollwin.nativeElement.scrollHeight;
   }
 
   listenMessages() {

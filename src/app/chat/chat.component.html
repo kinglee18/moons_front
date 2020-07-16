@@ -1,5 +1,5 @@
 <div class="container-fluid" id="container">
-    <div id="asd">
+    <div id="messages" #scrollWin>
         <div class="row" *ngFor='let message of historyMessages '>
             <div class="col-sm-12 d-flex" [ngClass]="{'justify-content-end': username== message.username}">
                 <div>

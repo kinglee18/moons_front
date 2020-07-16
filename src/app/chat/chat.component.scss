@@ -1,12 +1,15 @@
 #container {
-
+    height: 100%;
   
+    #messages {
+        height: 90%;
+        overflow-y: scroll;
+
+    }
     .own-message{
         float: right;
     }
-    #message-box{
-        overflow-y: scroll;
-    }
+   
 
     #controls{
         position: absolute;
