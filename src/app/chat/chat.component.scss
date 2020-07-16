@@ -1,0 +1,18 @@
+#container {
+
+  
+    .own-message{
+        float: right;
+    }
+    #message-box{
+        overflow-y: scroll;
+    }
+
+    #controls{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    
+}

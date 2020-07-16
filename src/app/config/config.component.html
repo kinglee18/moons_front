@@ -1,0 +1,8 @@
+<div>
+    <form>
+        <label for="name">Nombre:</label>
+        <input type="text" class="col-md-9" placeholder="Ingresa tu Nombre" name="name" [(ngModel)]="model.name"
+            #name="ngModel" required id="name">
+        <button (click)="save()" type="submit">Guardar</button>
+    </form>
+</div>

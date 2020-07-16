@@ -1,0 +1,19 @@
+<div class="container-fluid" id="container">
+    <div id="asd">
+        <div class="row" *ngFor='let message of historyMessages '>
+            <div class="col-sm-12 d-flex" [ngClass]="{'justify-content-end': username== message.username}">
+                <div>
+                    <span [ngClass]="{'own-message': username== message.username}">{{message.username}}</span>
+                    <p>{{message.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls">
+        <input type="text" class=" col-sm-9 col-sm-9" placeholder="Ingresa tu mensaje" name="message" [(ngModel)]="model.message"
+            #message="ngModel" required id="message">
+        <button (click)="sendMessage()" [disabled]="!message.valid" class="col-sm-2">Enviar</button>
+
+    </div>
+</div>
